@@ -8,4 +8,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(graph_theory src/main.cpp
         src/graph.cpp
         include/graph.h
-        include/graph_node.h)
+        include/graph_node.h
+        include/graph_utilities.h
+        src/graph_utilities.cpp)

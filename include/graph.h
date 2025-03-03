@@ -9,7 +9,7 @@
 template <typename T>
 class Graph {
 public:
-    std::unordered_map<std::shared_ptr<GraphNode<T>>,std::unordered_set<std::tuple<std::shared_ptr<GraphNode<T>>, std::shared_ptr<T>>>> graph;
+    std::unordered_map<std::shared_ptr<GraphNode<T>>, std::unordered_set<std::tuple<std::shared_ptr<GraphNode<T>>, std::shared_ptr<T>>>> graph;
 
     void addNode(std::shared_ptr<GraphNode<T>> node);
     void removeNode(std::shared_ptr<GraphNode<T>> node);
