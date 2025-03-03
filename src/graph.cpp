@@ -3,7 +3,7 @@
 
 template<typename T>
 void Graph<T>::addNode(std::shared_ptr<GraphNode<T>> node) {
-    this->graph.insert(std::make_pair(node, std::set<std::tuple<std::shared_ptr<GraphNode<T>>, T>>()));
+    this->graph.insert(std::make_pair(node, std::unordered_set<std::tuple<std::shared_ptr<GraphNode<T>>, T>>()));
 }
 
 template<typename T>

@@ -1,8 +1,6 @@
 #ifndef GRAPH_NODE_H
 #define GRAPH_NODE_H
 
-#include <set>
-
 template <typename T>
 class GraphNode {
 public:
