@@ -1,0 +1,50 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Wall",
+      "-Wextra",
+      "-std=c++17",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "build/graph.o",
+      "src/graph.cpp"
+    ],
+    "directory": "/Users/anirudh/kidskoding/courses/graph-theory",
+    "file": "/Users/anirudh/kidskoding/courses/graph-theory/src/graph.cpp",
+    "output": "/Users/anirudh/kidskoding/courses/graph-theory/build/graph.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Wall",
+      "-Wextra",
+      "-std=c++17",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "build/graph_utilities.o",
+      "src/graph_utilities.cpp"
+    ],
+    "directory": "/Users/anirudh/kidskoding/courses/graph-theory",
+    "file": "/Users/anirudh/kidskoding/courses/graph-theory/src/graph_utilities.cpp",
+    "output": "/Users/anirudh/kidskoding/courses/graph-theory/build/graph_utilities.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-Wall",
+      "-Wextra",
+      "-std=c++17",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "build/main.o",
+      "src/main.cpp"
+    ],
+    "directory": "/Users/anirudh/kidskoding/courses/graph-theory",
+    "file": "/Users/anirudh/kidskoding/courses/graph-theory/src/main.cpp",
+    "output": "/Users/anirudh/kidskoding/courses/graph-theory/build/main.o"
+  }
+]
