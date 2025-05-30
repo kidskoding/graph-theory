@@ -15,6 +15,7 @@ struct GraphNode {
 
 template <typename T>
 class Graph {
+public:    
     std::vector<GraphNode<T>*> graph;
 
     ~Graph() {
@@ -23,7 +24,6 @@ class Graph {
         }
     }
 
-public:
     void addNode(GraphNode<T>*& graphNode) {
         graph.push_back(graphNode);
     }
