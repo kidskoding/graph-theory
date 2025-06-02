@@ -47,7 +47,7 @@ namespace graph_utilities {
         return sum % 2 == 0;
     }
 
-    template <typename T>
+    /* template <typename T>
     std::vector<std::vector<GraphNode<T>*>> color(Graph<T>& graph) {
         std::vector<std::vector<GraphNode<T>*>> list;
         auto map = graph_utilities::getDegrees(graph); 
@@ -64,7 +64,7 @@ namespace graph_utilities {
         }
 
         return list;
-    }
+    } */
 }
 
 #endif //GRAPH_UTILITIES_H
