@@ -1,15 +1,12 @@
-#ifndef GRAPH_UTILITIES_H
-#define GRAPH_UTILITIES_H
+#ifndef GRAPH_UTILITIES_HPP
+#define GRAPH_UTILITIES_HPP
 
-#include "graph.hpp"
-#include <algorithm>
+#include "graph.h"
 #include <map>
 #include <utility>
-#include <vector>
+#include <set>
 
 namespace graph_utilities {
-    // test comment for gh profile readme
-
     template <typename T>
     int getEdges(Graph<T>& graph) {
         int nodes = graph.graph.size();
@@ -47,24 +44,43 @@ namespace graph_utilities {
         return sum % 2 == 0;
     }
 
-    /* template <typename T>
-    std::vector<std::vector<GraphNode<T>*>> color(Graph<T>& graph) {
-        std::vector<std::vector<GraphNode<T>*>> list;
-        auto map = graph_utilities::getDegrees(graph); 
-        std::vector<int> degrees;
-        for(const auto& pair : map) {
-            degrees.push_back(pair.second);
+    template <typename T>
+    std::map<GraphNode<T>*, int> color(Graph<T>& graph) {
+        auto degreesMap = graph_utilities::getDegrees(graph);
+        std::vector<std::pair<GraphNode<T>*, int>> nodeDegrees(degreesMap.begin(), degreesMap.end());
+
+        std::sort(nodeDegrees.begin(), nodeDegrees.end(),
+                [](const auto& a, const auto& b) {
+                    return a.second > b.second;
+                });
+
+        std::map<GraphNode<T>*, int> nodeColor;
+        for(const auto& nd : nodeDegrees) {
+            nodeColor[nd.first] = -1;
         }
 
-        int i = degrees.size() - 1;
-        while(i >= 0) {
-            int maxDegree = *std::max_element(degrees.begin(), degrees.end());
-            // find the key associated with maxDegree in map
-            i -= 1;
+        for(const auto& nd : nodeDegrees) {
+            GraphNode<T>* node = nd.first;
+
+            std::set<int> usedColors;
+            for(const auto& neighborTup : node->neighbors) {
+                GraphNode<T>* neighbor = std::get<0>(neighborTup);
+                int c = nodeColor[neighbor];
+                if(c != -1) {
+                    usedColors.insert(c);
+                }
+            }
+
+            int color = 0;
+            while(usedColors.find(color) != usedColors.end()) {
+                ++color;
+            }
+
+            nodeColor[node] = color;
         }
 
-        return list;
-    } */
+        return nodeColor;
+    }
 }
 
-#endif //GRAPH_UTILITIES_H
+#endif //GRAPH_UTILITIES_HPP
